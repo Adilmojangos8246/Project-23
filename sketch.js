@@ -24,6 +24,9 @@ function setup() {
 	helicopterSprite.scale=0.6
 	//helicopterSprite.depth = packageSprite.depth + 1;
 
+	box1 = new Box(200,300,50,50);
+    box2 = new Box(240,100,50,100); 
+    box3 = new Box(150,200,50,75);
 	
     
 	
@@ -41,16 +44,12 @@ function setup() {
 
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
-	World.add(world, ground);
-	 
-	b1=new Box(width/2,635,200,20);
-	b2=new Box(343,580,20,200);
-	b3=new Box(460,580,20,200);
-	
-
+ 	World.add(world, ground);
 
 
 	Engine.run(engine);
+	
+	
   
 }
 
@@ -59,11 +58,12 @@ function draw() {
   rectMode(CENTER);
   background(0);
  
-  drawSprites();
- b1.display();
- b2.display();
- b3.display();
+  box1.display();
+  box2.display();
+  box3.display();
 
+  drawSprites();
+ 
 }
 
 function keyPressed() {
